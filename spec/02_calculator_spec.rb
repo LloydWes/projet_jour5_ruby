@@ -48,12 +48,21 @@ describe "#multiply" do
   end
 
   it "multiplies two other numbers" do
-    expect(multiply(3, 1.3)).to eq(3.9)
+    expect(multiply(3, 1.3)).to eq(3.9) #Ici j'ai écris un test parce que 3*1.3 != 3.9 
+    # one other test here, don't forget do end ;)
+  end
+
+  it "multiplies two other numbers" do
+    expect(multiply(3, 1.5)).to eq(4.5) #Ici j'ai écris un test parce que 3*1.3 != 3.9 
     # one other test here, don't forget do end ;)
   end
 
   it "multiplies two other numbers, one of them being 0" do
     expect(multiply(5,0)).to eq(0)
+    # one last test, with 0 in it
+  end
+  it "multiplies two other numbers, one of them being 0" do
+    expect(multiply(3,-4)).to eq(-12)
     # one last test, with 0 in it
   end
 end

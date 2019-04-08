@@ -1,17 +1,15 @@
 def translate(string_that_makes_me_wanna_kill_myself)
   stmmwkm = string_that_makes_me_wanna_kill_myself
-  stmmwkm = stmmwkm.split
+  stmmwkm = stmmwkm.split #On sépare la chaine en tableau 
   sequence = nil
   stmmwkm.map!{|word|
-    #sequence = word.match(/^(?:.{1,}sch|.{1,})[^aeiuoy].{1,}$/i)
-    word.match(/^([b-df-hj-np-tv-z]*qu|^sch|[b-df-hj-np-tv-z]*[^aeiouy])?/i){
+    word.match(/(^[b-df-hj-np-tv-z]*qu|^sch|^[b-df-hj-np-tv-z]*[^aeiouy])?/i){ #On selectionne les consonnes qui précèdent 'qu' en début de chaineet ce jusqu'à la première voyelle
+      # ou on sélectionne sch en début de chaine et ce jusqu'à la première voyelle
+      # ou on sélectionne tout les consonnes en début de chaine et ce jusqu'à la première voyelle
+      # on capture le tout avec des paranthèses
     |sequence|
-    
-    #sequence = word.match(/^(qu|[^aeuio])+/)
-    if sequence != nil && sequence.captures[0] != ""
-    	# print "---|",sequence.captures[0].to_s.class, "---|"
-      # print "sequence ",sequence.inspect, "\n"
-      # print "sequence ",sequence.captures, "\n"
+    if sequence != nil && sequence.captures[0] != "" #Si la capture n'échoue pas
+      #On extrait la zone capturé pour la placer à la fin avec les caractères "ay"
       word[sequence.captures[0].to_s.length..word.length-1] << "" << sequence.captures[0].to_s << "ay"
     else
       puts "Rien n'a été trouvé"

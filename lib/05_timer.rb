@@ -1,7 +1,5 @@
 def time_string(time)
-  hours = 0
-  minutes = 0
-  seconds = 0
+
   hours = time / 3600
   time -= hours * 3600
 
@@ -10,18 +8,9 @@ def time_string(time)
   
   seconds = time
 
-  hours = hours.to_s
-  if hours.size == 1
-    hours = "0"+hours
-  end
-  minutes = minutes.to_s
-  if minutes.size == 1
-    minutes = "0"+minutes
-  end
-  seconds = seconds.to_s
-  if seconds.size == 1
-    seconds = "0" + seconds
-  end
+  hours = hours.to_s.rjust(2, "0") #rjust permet de combler une chaine de caractère si elle est trop petite et la remplir avec des 0
+  minutes = minutes.to_s.rjust(2, "0")
+  seconds = seconds.to_s.rjust(2, "0")
 
   return "#{hours}:#{minutes}:#{seconds}"
 end
