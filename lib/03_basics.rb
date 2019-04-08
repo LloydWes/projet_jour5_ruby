@@ -19,23 +19,12 @@ def reverse_upcase_noLTA(str)
 end
 
 def array_42(arr)
-  return arr.any?(42)
+  return arr.any?{|n| n==42}
 end
 
 def magic_array(arr)
-  arr.flatten!
-  # print arr.class, " ", arr, "\n"
-  arr.sort!
-  # print arr.class, " ", arr, "\n"
-  arr.map! {|n| n * 2}
-  # print arr.class, " ", arr, "\n"
-  arr.delete_if{|n| n%3==0}
-  # print arr.class, " ", arr, "\n"
-  arr.uniq!
-  # print arr.class, " ", arr, "\n"
-  arr.sort!
-  # print arr.class, " ", arr, "\n"
-  return arr
+  return arr.flatten.sort.uniq.map{|n| n*2}.delete_if{|n| n%3==0}
+  
 end
 
 def perform

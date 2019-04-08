@@ -1,3 +1,47 @@
+def translate(string_that_makes_me_wanna_kill_myself)
+  stmmwkm = string_that_makes_me_wanna_kill_myself
+  stmmwkm = stmmwkm.split
+  sequence = nil
+  stmmwkm.map!{|word|
+    #sequence = word.match(/^(?:.{1,}sch|.{1,})[^aeiuoy].{1,}$/i)
+    word.match(/^([b-df-hj-np-tv-z]*qu|^sch|[b-df-hj-np-tv-z]*[^aeiouy])?/i){
+    |sequence|
+    
+    #sequence = word.match(/^(qu|[^aeuio])+/)
+    if sequence != nil && sequence.captures[0] != ""
+    	# print "---|",sequence.captures[0].to_s.class, "---|"
+      # print "sequence ",sequence.inspect, "\n"
+      # print "sequence ",sequence.captures, "\n"
+      word[sequence.captures[0].to_s.length..word.length-1] << "" << sequence.captures[0].to_s << "ay"
+    else
+      puts "Rien n'a été trouvé"
+    end
+}
+  }
+  return stmmwkm.join(" ")
+end
+
+#Fait pas gaffe aux commentaires stp
+
+
+# puts attempt("apple")
+# puts attempt("banana")
+# puts attempt("eat pie")
+# puts attempt("school")
+# puts attempt("quiet")
+# puts attempt("three")
+
+# ^((?:.{1,}sch|.{1,}).{1,}[^aeiuoy]).{1,}$
+#^([^aeiouy:alpha:]*(?:qu|sch)|[^aeiouy:alphanum:]*[^aeiouy])[aeiouy]+
+# ^([^aeiouy[:alpha:]]*(?:qu|sch)|[^aeiouy:alphanum:]*[^aeiouy])[aeiouy]+
+# ^([^aeiouy[:alpha:]]*(?:qu|sch)|[[:alpha:]^aeiouy]*[^aeiouy])[aeiouy]+
+
+#[b-df-hj-np-tv-z]
+
+#^((?:[b-df-hj-np-tv-z]*qu|^sch)|[b-df-hj-np-tv-z]*[^aeiouy])[aeiouy]?
+
+
+=begin
 def vowel_pos(search_str)
   return search_str.index(/[aeiuoy]/) || nil
 end
@@ -51,31 +95,4 @@ def translate(string_that_makes_me_wanna_kill_myself)
   }
   return stmmwkm.join(" ")
 end
-
-def attempt(string_that_makes_me_wanna_kill_myself)
-  stmmwkm = string_that_makes_me_wanna_kill_myself
-  stmmwkm = stmmwkm.split
-  sequence = nil
-  stmmwkm.map!{|word|
-    sequence = word.match(/^(?:.{1,}sch|.{1,})[^aeiuoy].{1,}$/i)
-    if sequence != nil
-      print "sequence ",sequence, "\n"
-      word[sequence.length..word.length-1] << sequence.to_s << "ay"
-    else
-      puts "Rien n'a été trouvé"
-    end
-  }
-  return stmmwkm.join(" ")
-
-end
-
-puts attempt("apple")
-puts attempt("banana")
-puts attempt("eat pie")
-puts attempt("school")
-puts attempt("quiet")
-puts attempt("three")
-
-# ^((?:.{1,}sch|.{1,}).{1,}[^aeiuoy]).{1,}$
-#^([^aeiouy:alpha:]*(?:qu|sch)|[^aeiouy:alphanum:]*[^aeiouy])[aeiouy]+
-# ^([^aeiouy[:alpha:]]*(?:qu|sch)|[^aeiouy:alphanum:]*[^aeiouy])[aeiouy]+
+=end
