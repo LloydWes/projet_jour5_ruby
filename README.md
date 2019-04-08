@@ -1,6 +1,7 @@
-## Exercices sur les tests
+<h1>Exercices sur les tests</h1>
 
-#Membres du groupe
+<h2>Membres du groupe</h2>
+<br />
 BROIN Sebastien (@Sébastien B)
 WESTBURY Lloyd (@Lloyd)
 
