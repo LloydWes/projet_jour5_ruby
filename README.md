@@ -2,8 +2,11 @@
 
 <h2>Membres du groupe</h2>
 <br />
-BROIN Sebastien (@Sébastien B)
+BROIN Sebastien (*@Sébastien B*)
 <br />
-WESTBURY Lloyd (@Lloyd)
+WESTBURY Lloyd (**@Lloyd**)
+- item
+- item
+-item
 
 
