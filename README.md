@@ -2,11 +2,6 @@
 
 <h2>Membres du groupe</h2>
 <br />
-BROIN Sebastien (*@Sébastien B*)
+BROIN Sebastien (<strong>@Sébastien B</strong>)
 <br />
-WESTBURY Lloyd (**@Lloyd**)
-- item
-- item
--item
-
-
+WESTBURY Lloyd (<strong>@Lloyd</strong>)
